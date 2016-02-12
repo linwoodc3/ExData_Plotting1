@@ -58,16 +58,16 @@ plotdata[,3:9] <- (sapply(plotdata[,3:9],as.double))
 plotdata$newdate <- with(plotdata, as.POSIXct(paste(Date, Time), format="%Y-%m-%d %H:%M"))
 
 # Send plot to png file in local directory
-png(file = "./plot1.png", width = 480, height = 480,bg = "white")
+png(file = "./plot2.png", width = 480, height = 480,bg = "white")
 
 # set outer margins
 par(oma=c(0,0,2,0))
 
-# Start the default graphics device; create a histogram
-hist(plotdata$Global_active_power, xlab = "Global Active Power (kilowatts)", col = "red", main = "Global Active Power")
+# Create the line plot
+plot( plotdata$newdate, plotdata$Global_active_power, ylab = "Global Active Power (kilowatts)", xlab= "", type="l", main="")
 
 # Add text to top left corner
-mtext("Plot 1",adj=0, outer = TRUE)
+mtext("Plot 2",adj=0, outer = TRUE)
 
 # Return plotting device to default
 dev.off()
