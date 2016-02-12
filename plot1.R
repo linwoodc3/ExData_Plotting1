@@ -38,7 +38,7 @@ if (!file.exists("household_power_consumption.txt")){
 
 
 # Read in the table
-data <- read.table('./household_power_consumption.txt',sep=';',header=TRUE, stringsAsFactors = FALSE)
+data <- read.table('./household_power_consumption.txt',sep=';',header=TRUE, stringsAsFactors = FALSE,na.strings = c("?"))
 
 # Convert date column to date class (reads as a double)
 data$Date <- as.Date(strptime(data$Date,"%d/%m/%Y"))
