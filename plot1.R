@@ -28,7 +28,7 @@ plotdata$Time <- chron(times = plotdata$Time)
 plotdata[,3:9] <- (sapply(plotdata[,3:9],as.double))
 
 # Send plot to png file in local directory
-png(file = "./plot1.png", width = 480, height = 480,bg = "transparent")
+png(file = "./plot1.png", width = 480, height = 480,bg = "white")
 
 # set outer margins
 par(oma=c(0,0,2,0))
